@@ -43,6 +43,7 @@ public class stepDef1 {
 		
 		//runner.runTestStep( testStepreq );//we can run a particular teststep like this as well.
 		testStepreq.run(runner,runner.getRunContext());//we can run a test step like this also.
+	
 		//runner.run();
 		//testStepname.setPropertyValue("properties", "value");//we can set and get value of property like this.
 		WsdlTestStep proptranfer = testCase.getTestStepByName( "PropertyTransfer" );
