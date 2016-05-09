@@ -8,18 +8,9 @@ import cucumber.api.junit.Cucumber;
 		features = "cucumberfeatures"
 		,glue={"cucumbersoapuiautomation"}
 		,monochrome = false
-		,plugin = {"html:target/cucumber-html-report", "json:target/cucumber-json-report.json"}
+		,plugin = {"pretty","html:target/cucumber-html-report", "json:target/cucumber-json-report.json"}
 		)
 
-/*
-@CucumberOptions(
-		features = "cucumberfeatures"
-		,glue={"src/test/java/cucumbersoapuiautomation/basicrunStepDef.java"}
-		,monochrome = false
-		,plugin = {"html:target/cucumber-html-report", "json:target/cucumber-json-report.json"}
-		//you can give anypath..here targe is the target folderS
-		)
-*/
 public class TestRunner {
 
 

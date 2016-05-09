@@ -14,6 +14,8 @@ public class jProjectContext {
 	public static WsdlTestStep  requestProperties;
     //project properties
 	public static String suiteName;
+	public static String jtestCaseName;
+	public static String jtestStepName;
 	public static String Endpointinput;
 	
 
@@ -37,8 +39,8 @@ public class jProjectContext {
 	
 	{
 		try{
-			
-			testCase = project.getTestSuiteByName(suiteName).getTestCaseByName(testCaseNameArg);
+			jtestCaseName=testCaseNameArg;
+			testCase = project.getTestSuiteByName(suiteName).getTestCaseByName(jtestCaseName);
 			jrunner = new WsdlTestCaseRunner( testCase, new StringToObjectMap() );
 			
 			return true;//at the end return true if no exception
@@ -70,8 +72,8 @@ public class jProjectContext {
 	
 		{
 			try{
-				
-				testRequestStep = testCase.getTestStepByName(testStepNameArg);
+				jtestStepName=testStepNameArg;
+				testRequestStep = testCase.getTestStepByName(jtestStepName);
 				return true;//at the end return true if no exception
 		}
 		catch(Exception e)

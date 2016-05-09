@@ -9,6 +9,20 @@ import cucumber.api.java.en.When;
 public class basicrunStepDef {
 	jValidation validationobj=new jValidation();
 	
+	@Given("^Do all the excel file setup$")
+	public void do_all_the_excel_file_setup() throws Throwable {
+		setupTeardown.filesetup();
+		
+	}
+	
+
+	@Given("^Write to report excel file and close the file$")
+	public void write_to_report_excel_file_and_close_the_file() throws Throwable {
+	
+		setupTeardown.closingSteps();	
+	}
+
+
 	@Given("^The WSDL project name \"([^\"]*)\" and Testsuite name \"([^\"]*)\"$")
 	public void the_WSDL_project_name_and_Testsuite_name(String arg1, String arg2) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions

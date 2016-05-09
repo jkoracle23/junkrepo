@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="Testpackage.firstSoapUITest" time="0.107" errors="0" skipped="0">
+<testsuite tests="22" failures="0" name="cucumbersoapuiautomation.TestRunner" time="0.001" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_77\jre\bin"/>
@@ -61,5 +61,26 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase classname="Testpackage.firstSoapUITest" name="learning" time="0.107"/>
+  <testcase classname="Scenario: Validating response for request with some input" name="Given The WSDL project name &quot;src/test/resources/Project-1-soapui-project.xml&quot; and Testsuite name &quot;WeathersoapRegression&quot;" time="0.001"/>
+  <testcase classname="Scenario: Validating response for request with some input" name="Given The testcasename &quot;GetCityForecastByZip&quot; and TestStepname &quot;simplegetCityForecastByZip&quot;" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input" name="And The request Endpoint is &quot;http://wsf.cdyne.com/WeatherWS/Weather.asmx&quot;" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input" name="When Input data with node &lt;&gt;" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input" name="When Expected xpath of nodes are" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input" name="When Expected result represented by table" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input" name="Then Run the step and validate the result" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input" name="Scenario: Validating response for request with some input" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input a second case" name="Given The WSDL project name &quot;src/test/resources/Project-1-soapui-project.xml&quot; and Testsuite name &quot;WeathersoapRegression&quot;" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input a second case" name="Given The testcasename &quot;GetCityForecastByZip&quot; and TestStepname &quot;FullCountryInfo&quot;" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input a second case" name="And The request Endpoint is &quot;http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso&quot;" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input a second case" name="When Input data with node &lt;&gt;" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input a second case" name="When Expected xpath of nodes are" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input a second case" name="When Expected result represented by table" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input a second case" name="Then Run the step and validate the result" time="0"/>
+  <testcase classname="Scenario: Validating response for request with some input a second case" name="Scenario: Validating response for request with some input a second case" time="0"/>
+  <testcase classname="Scenario: To get zip code" name="Given get endpoints" time="0"/>
+  <testcase classname="Scenario: To get zip code" name="When this is the data step" time="0"/>
+  <testcase classname="Scenario: To get zip code" name="Then set the data/properties" time="0"/>
+  <testcase classname="Scenario: To get zip code" name="Then run the request test step" time="0"/>
+  <testcase classname="Scenario: To get zip code" name="Then Validate the response with the this data" time="0"/>
+  <testcase classname="Scenario: To get zip code" name="Scenario: To get zip code" time="0"/>
 </testsuite>

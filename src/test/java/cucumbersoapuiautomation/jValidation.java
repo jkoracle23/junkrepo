@@ -27,6 +27,13 @@ public class jValidation extends jProjectContext{
 	public int listResponseColnum=0;
 	public int requestNodesSize=0;
 	public int listResponsNodeseRownum=0;
+	public static String RequestNodeName;
+	public static String requestNodeValue;
+	public static String responseNodeXpath;
+	public static String responseExpectedValue;
+	public static String responseActualValue;
+	
+	
 	public void inputRequestData(List<List<String>> locallist)
 	{
 		ListRequest=locallist;
@@ -65,9 +72,10 @@ public class jValidation extends jProjectContext{
 
 		for(int col=0;col<listRequestColnum;col++)
 		{
-			ListRequest.get(0).get(col);
+			RequestNodeName=ListRequest.get(0).get(col);
 			requestProperties= testCase.getTestStepByName( "requestProperties" );
-			requestProperties.setPropertyValue(ListRequest.get(0).get(col),"");
+			//requestProperties.setPropertyValue(ListRequest.get(0).get(col),"");
+			requestProperties.setPropertyValue(RequestNodeName,"");
 					
 		}
 		
@@ -78,6 +86,7 @@ public class jValidation extends jProjectContext{
 			//System.out.println(row);
 			for(int col=0;col<listRequestColnum;col++)
 			{
+			requestNodeValue=ListRequest.get(row).get(col);
 			requestProperties.setPropertyValue(ListRequest.get(0).get(col),ListRequest.get(row).get(col));//property value is set for this run
 			//System.out.println("ListRequest.get(row).get(col)"+(ListRequest.get(row).get(col)));
 			jrunner.runTestStep(testRequestStep);
@@ -85,18 +94,22 @@ public class jValidation extends jProjectContext{
 				//get the response nodes xpath which needs to be validated
 					for(int xpathNodesCount=0;xpathNodesCount<ListResponseNodes.size();xpathNodesCount++)
 						{
-							String responseValue=jrunner.getRunContext().expand(ListResponseNodes.get(xpathNodesCount).get(0));
-			 				
-							//System.out.println(ListExpectedResponse.get(xpathNodesCount).get(row-1).toString());
+						    responseNodeXpath=ListResponseNodes.get(xpathNodesCount).get(0);
+						    responseExpectedValue=ListExpectedResponse.get(xpathNodesCount).get(row-1);
+						    responseActualValue=jrunner.getRunContext().expand(ListResponseNodes.get(xpathNodesCount).get(0));
+			 				//System.out.println(ListExpectedResponse.get(xpathNodesCount).get(row-1).toString());
 							//System.out.println(responseValue);
 							
-							if(responseValue.equals(ListExpectedResponse.get(xpathNodesCount).get(row-1).toString()))
+							if(responseActualValue.equals(ListExpectedResponse.get(xpathNodesCount).get(row-1).toString()))
 			 				{
-			 					System.out.println("Expected value :"+ListExpectedResponse.get(xpathNodesCount).get(row-1) +"is equal to the actual value:"+responseValue);
+			 					System.out.println("Expected value :"+ListExpectedResponse.get(xpathNodesCount).get(row-1) +"is equal to the actual value:"+responseActualValue);
 			 				}
 			 				else
 			 				{
-			 					System.out.println("Expected value :"+ListExpectedResponse.get(xpathNodesCount).get(row-1) +"IS NOT EQUAL to the actual value:"+responseValue);
+			 					System.out.println("Expected value :"+ListExpectedResponse.get(xpathNodesCount).get(row-1) +"IS NOT EQUAL to the actual value:"+responseActualValue);
+			 					
+			 					setupTeardown.entryIntoReport(suiteName,jtestCaseName,jtestStepName,RequestNodeName,
+				                           requestNodeValue,responseNodeXpath,responseExpectedValue,responseActualValue  );
 			 				}
 			 				
 			 				
